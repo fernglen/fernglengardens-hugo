@@ -1,0 +1,114 @@
+/* --- LAYOUT --- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 20em;
+    height: 5em;
+}
+
+nav {
+    width: 20em;
+    padding: 2em 2em;
+}
+
+main {
+    position: absolute;
+    top: 0;
+    left: 20em;
+    right: 0;
+}
+
+article {
+    margin: 0 auto;
+    max-width: 65em;
+    padding: 2em 5em;
+}
+
+@media screen and (max-width: 60em) {
+
+    header {
+        width: 100%;
+    }
+
+    nav {
+        position: absolute;
+        left: -20em;
+    }
+
+    main {
+        position: absolute;
+        left: 0;
+        top: 5em;
+    }
+
+    article {
+        padding: 2em 3em;
+    }
+}
+
+
+/* STYLE */
+
+* {
+    background-color: transparent;
+    line-height: 1.5em;
+    color: #333;
+}
+
+header {
+    background-color: #bdb;
+    color: #363;
+    text-align: center; 
+}
+
+.sidemenu li {
+    list-style: none;
+    box-sizing: content-box;
+    padding: 0;
+    margin: 0;
+}
+
+.sidemenu .selected {
+    border: 5px solid #363;
+}
+
+.sidemenu .unselected {
+    padding: 5px;
+}
+
+.sidemenu a {
+    color: #363;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.3em;
+    display: block;
+}
+
+.sidemenu a:hover {
+    color: #030;
+}
+
+h1 {
+    font-size: 2em;
+    padding: 0.5em 0 0.1em 0;
+}
+
+h2 {
+    font-size: 1.4em;
+    padding: 1em 0 0.2em 0;
+}
+
+p {
+    padding: 0.4em 0;
+}
+
+li {
+    list-style-position: inside;
+    padding: 0 0 0 0.5em;
+}
