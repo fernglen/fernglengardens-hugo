@@ -1,0 +1,9 @@
+title = "Fernglen Native Plant Gardens"
+languageCode = "en"
+uglyURLs = true
+verbose = true
+# baseurl = ""
+# MetaDataFormat = "toml"
+
+[params]
+    pureCssDir = "css/pure-0.6.1"
