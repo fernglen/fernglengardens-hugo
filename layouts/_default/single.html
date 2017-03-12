@@ -3,23 +3,31 @@
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link rel="stylesheet" href="{{ .Site.Params.pureCssDir }}/base-min.css">
         <link rel="stylesheet" href="css/fernglen.css">
     </head>
 
     <body>
 
-        <header>
+        <header id="logo">
             <p>[ L O G O ]</p>
         </header>
-        
-        <nav>
-            <ul class="sidemenu">
+
+        <input type="checkbox" id="menutoggle-state" value="" />
+
+        <nav id="sidemenu-pane">
+            <ul id="sidemenu">
                 {{- $currentPage := . }}
                 {{- range .Site.Menus.main }}
                 <li class="{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}selected{{else}}unselected{{end}}"><a href=".{{.URL}}">{{ .Name }}</a></li>
                 {{- end }}
             </ul>
+            <label for="menutoggle-state" id="menutoggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </label>
         </nav>
 
         <main>
