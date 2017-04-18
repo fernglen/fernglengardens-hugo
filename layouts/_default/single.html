@@ -9,37 +9,35 @@
     </head>
 
     <body>
-
-        <header id="logo">
-            <p>[ L O G O ]</p>
-        </header>
-
-        <input type="checkbox" id="menutoggle-state" value="" />
-
-        <nav id="sidemenu-pane">
-            <ul id="sidemenu">
-                {{- $currentPage := . }}
-                {{- range .Site.Menus.main }}
-                <li class="{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}selected{{else}}unselected{{end}}"><a href=".{{.URL}}">{{ .Name }}</a></li>
-                {{- end }}
-            </ul>
-            <label for="menutoggle-state" id="menutoggle">
-                <div></div>
-                <div></div>
-                <div></div>
-            </label>
-        </nav>
-
-        <main>
-            <article>
+        <div id="aside">
+            <div id="header">
+                <p>[ L O G O ]</p>
+            </div>
+            <input type="checkbox" id="menutoggle-state" value="" />
+            <div id="nav">
+                <label for="menutoggle-state" id="menutoggle">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </label>
+                <ul id="sidemenu">
+                    {{- $currentPage := . }}
+                    {{- range .Site.Menus.main }}
+                    <li class="{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}selected{{else}}unselected{{end}}"><a href=".{{.URL}}">{{ .Name }}</a></li>
+                    {{- end }}
+                </ul>
+            </div>
+        </div>
+        <div id="main">
+            <div id="article">
                 {{ if ne .Title "" -}}
                 <h1>{{ .Title }}</h1>
                 {{- if isset .Params "subtitle"}}<p class="subtitle">{{ .Params.subtitle }}</p>{{ end -}}
                 {{ end }}
                 
                 {{ .Content }}
-            </article>
-        </main>
+            </div>
+        </div>
     </body>
 
 </html>
